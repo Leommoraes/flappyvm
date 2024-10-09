@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird - JavaScript</title>
+    <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <style>
+        body {
+            background-color: #70c5ce;
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            color: #333;
+        }
+
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #formContainer, #rankingContainer {
+            display: none;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 50px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            width: 300px;
+        }
+
+        h2 {
+            font-family: 'Teko', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #70c5ce;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #70c5ce;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #58a3b0;
+        }
+
+        #rankingList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #rankingList li {
+            margin: 10px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .divider {
+            margin: 15px 0;
+            height: 2px;
+            background-color: #70c5ce;
+        }
+
+        .positionMessage {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bird" width="320" height="480"></canvas>
+    <div id="formContainer">
+        <h2>Game Over! Insira seu nome:</h2>
+        <input type="text" id="playerName" placeholder="Seu Nome">
+        <button id="submitBtn">Enviar</button>
+    </div>
+    <div id="rankingContainer">
+        <h2>Ranking dos Melhores Jogadores</h2>
+        <ol id="rankingList"></ol>
+        <div class="positionMessage" id="positionMessage"></div>
+        <button id="backBtn">Voltar ao Jogo</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
